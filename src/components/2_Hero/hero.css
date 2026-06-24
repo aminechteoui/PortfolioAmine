@@ -77,3 +77,23 @@ section.hero {
       display: none;
     }
   }
+  .hero-actions {
+  margin-top: 1.5rem;
+}
+
+.cv-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+  background-color: var(--blue);
+  color: white;
+  transform: translateY(-2px);
+}

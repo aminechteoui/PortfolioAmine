@@ -4,9 +4,8 @@ import devAnimation from "../../animation/dev.json";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
-
 const Hero = () => {
-  const lottieRef = useRef();
+  const lottieRef = useRef(null);
 
   return (
     <section id="Hero" className="hero flex">
@@ -18,8 +17,9 @@ const Hero = () => {
             transition={{ damping: 6, type: "spring", stiffness: 100 }}
             src="./mmm.jpg"
             className="avatar"
-            alt=""
+            alt="Amine Chteoui Profile"
           />
+
           <div className="icon-verified"></div>
         </div>
 
@@ -29,27 +29,70 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="title"
         >
-          Software Engineering Student And MERN Stack Developer.
+          Software Engineer | Full-Stack Web & Mobile Developer (Angular,
+          Django, Flutter)
         </motion.h1>
 
         <p className="sub-title">
-          I am Amine Chteoui, a final-year Software Engineering student and a developer specializing in the MERN Stack (MongoDB, Express.js, React, Node.js).
-          Passionate about web development, I create modern, high-performance solutions tailored to users' needs. My expertise includes building dynamic, scalable, and secure web applications.
-          Explore my portfolio to discover my projects, background, and technical skills. Feel free to contact me to discuss collaborations or learn more about my work!
+          Software Engineer specialized in Full-Stack Web & Mobile Development
+          with experience in Angular, Django, Node.js, and Flutter.
+          <br />
+          <br />
+          I build scalable applications, AI-powered solutions, and modern user
+          experiences with a strong focus on performance, maintainability, and
+          clean architecture.
+          <br />
+          <br />
+          My projects include AI-powered collaborative platforms, maintenance
+          management systems, and modern web applications focused on
+          performance, usability, and business value.
+          <br />
+          <br />
+          Currently seeking opportunities to contribute, learn, and grow within
+          innovative engineering teams.
         </p>
 
         <div id="Speaking" className="all-icons flex">
-          <a href="https://www.facebook.com/aammiin/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com/aammiin/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook Profile"
+          >
             <div className="icon icon-facebook2"></div>
           </a>
-          <a href="https://www.instagram.com/amine.chtiouiii/" target="_blank" rel="noopener noreferrer">
+
+          <a
+            href="https://www.instagram.com/amine.chtiouiii/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Profile"
+          >
             <div className="icon icon-instagram"></div>
           </a>
-          <a href="https://github.com/aminechteoui" target="_blank" rel="noopener noreferrer">
+
+          <a
+            href="https://github.com/aminechteoui"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+          >
             <div className="icon icon-github"></div>
           </a>
-          <a href="https://www.linkedin.com/in/amine-chteoui-5372bb202/" target="_blank" rel="noopener noreferrer">
+
+          <a
+            href="https://www.linkedin.com/in/amine-chteoui-5372bb202/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
+          >
             <div className="icon icon-linkedin"></div>
+          </a>
+        </div>
+
+        <div className="hero-actions">
+          <a href="/Amine_Chteoui_CV.pdf" download className="cv-btn">
+            Download CV
           </a>
         </div>
       </div>
@@ -57,11 +100,8 @@ const Hero = () => {
       <div className="right-section animation">
         <Lottie
           lottieRef={lottieRef}
-          className=""
           onLoadedImages={() => {
-            if (lottieRef.current) {
-              lottieRef.current.setSpeed(0.5);
-            }
+            lottieRef.current?.setSpeed?.(0.5);
           }}
           animationData={devAnimation}
         />
